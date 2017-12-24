@@ -49,5 +49,26 @@
     "test": "react-scripts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill",
     "eject": "react-scripts eject",
     "lint": "eslint --fix --max-warnings=0 --config=./.eslintrc --ext .js --ext .json ./src/."
-  }
+  },
+  "description": "Material-UI wrappers with intl support built in",
+  "main": "index.js",
+  "bin": {
+    "react-intl-material": "compile-E.164.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://willfarrell@github.com/willfarrell/react-intl-material.git"
+  },
+  "keywords": [
+    "react",
+    "material-ui",
+    "intl",
+    "i18n"
+  ],
+  "author": "willfarrell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willfarrell/react-intl-material/issues"
+  },
+  "homepage": "https://github.com/willfarrell/react-intl-material#readme"
 }
