@@ -1,0 +1,78 @@
+{
+    "parser": "",
+    "parserOptions":{
+        "allowImportExportEverywhere": true
+    },
+    "extends": [
+        "standard",
+        "react"
+    ],
+    "plugins": [
+        "json"
+    ],
+    "globals": {
+        "Promise": true
+    },
+    "ecmaFeatures":{
+        "modules": true
+    },
+    "rules": {
+        "react/jsx-uses-react": "error",
+        "key-spacing": 0,
+        "max-len": [
+            2,
+            240,
+            2
+        ],
+        "object-curly-spacing": [
+            2,
+            "always"
+        ],
+        "indent": [
+            2,
+            4
+        ],
+        "no-multi-spaces": [
+            "error",
+            {
+                "ignoreEOLComments": true
+            }
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "semi": 0,
+        "no-warning-comments": 0,
+        "capitalized-comments": 0,
+        "line-comment-position": 0,
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "args": "all"
+            }
+        ],
+        "max-params": [
+            "error",
+            5
+        ],
+        "operator-linebreak": [
+            "error",
+            "before"
+        ],
+        "func-style": [
+            "error",
+            "declaration",
+            {
+                "allowArrowFunctions": true
+            }
+        ],
+        "multiline-ternary": 0
+    }
+}

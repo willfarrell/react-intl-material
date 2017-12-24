@@ -1,0 +1,12 @@
+{
+    "field.name.label":"Name",
+    "field.country.label":"Country",
+    "field.line1.label":"Line 1",
+    "field.line2.label":"Line 2",
+    "field.city.label":"City",
+    "field.region.label":"Region",
+    "field.postcode.label":"Postcode",
+    "field.phone.label":"Phone",
+    "field.email.label":"Email",
+    "field.url.label":"Website"
+}

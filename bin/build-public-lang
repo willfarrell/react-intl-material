@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+dir=public/static/lang
+mkdir -p ${dir}
+
+list=$(find src -path \*/lang/\*.json)
+
+for item in ${list}; do
+    file=$(basename "${item%}")
+    echo "${item} => ${dir}/${file}"
+    cat ${item} | jq -c . > ${dir}/${file}
+done
+
+echo "Done!"
