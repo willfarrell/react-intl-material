@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlTextField from '../IntlTextField';
+import IntlTextField from '../TextField';
 
-import {encode as encodeEmail, decode as decodeEmail} from '../lib/email';
+import {urlEncode, urlDecode} from '../lib/url';
 
 const TextField = (props) => {
     // ignore schema in ...rest
@@ -13,8 +13,8 @@ const TextField = (props) => {
     return (
         <IntlTextField
             {...rest}
-            value={decodeEmail(value)}
-            clean={encodeEmail}
+            value={urlDecode(value)}
+            clean={urlEncode}
             lowercase
         />
     );

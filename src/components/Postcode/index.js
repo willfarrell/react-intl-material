@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlTextField from '../IntlTextField';
+import IntlTextField from '../TextField';
 
 import postcodeSchema from 'upu-postcode/dist/postcode.jsonschema.json';
 import postcodeMasks from 'upu-postcode/dist/postcode.masks.json';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlTextField from '../IntlTextField';
+import IntlTextField from '../TextField';
 
 import masks from './masks.json';
 import schema from './schema.json';

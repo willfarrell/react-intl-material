@@ -1,10 +1,10 @@
 import uts46 from "idna-uts46";
 
-export const encode = (value) => {
+export const emailEncode = (value) => {
     return uts46.toAscii(value, {transitional: false});
 };
 
-export const decode = (value) => {
+export const emailDecode = (value) => {
     if (value) {
         const parts = value.split('@');
         if (parts.length === 2) {

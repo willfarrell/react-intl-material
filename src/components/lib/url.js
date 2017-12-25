@@ -7,7 +7,7 @@ const parse = (str) => {
     return urlParts;
 };
 
-export const encode = (value) => {
+export const urlEncode = (value) => {
     const urlParts = parse(value);
     if (urlParts[1] !== '') {
         urlParts[1] = uts46.toAscii(urlParts[1], {transitional: false});
@@ -15,7 +15,7 @@ export const encode = (value) => {
     return encodeURI(urlParts.join(''));
 };
 
-export const decode = (value) => {
+export const urlDecode = (value) => {
     if (value) {
         const urlParts = parse(value);
         if (urlParts[1] !== '') {

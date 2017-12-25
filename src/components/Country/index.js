@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlSelect from '../IntlSelect';
+import IntlSelect from '../Select';
 
 const Select = (props) => {
     const {...rest} = props;
