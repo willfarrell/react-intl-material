@@ -70,7 +70,6 @@ const Address = (props) => {
 
                     required
                     label
-                    uppercase
                     fullWidth
                 />
 
