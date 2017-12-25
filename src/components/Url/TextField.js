@@ -7,18 +7,16 @@ import {encode as encodeUrl, decode as decodeUrl} from '../lib/url';
 
 const TextField = (props) => {
     // ignore schema in ...rest
-    const { ...rest } = props;
-    let { value } = props;
+    const {...rest} = props;
+    let {value} = props;
 
     return (
-        <div>
-            <IntlTextField
-                {...rest}
-                value={decodeUrl(value)}
-                clean={encodeUrl}
-                lowercase
-            />
-        </div>
+        <IntlTextField
+            {...rest}
+            value={decodeUrl(value)}
+            clean={encodeUrl}
+            lowercase
+        />
     );
 };
 

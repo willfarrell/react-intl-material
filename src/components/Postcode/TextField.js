@@ -9,19 +9,17 @@ import postcodeMasks from 'upu-postcode/dist/postcode.masks.json';
 const TextField = (props) => {
     const {country, ...rest} = props;
 
-    const masks = postcodeMasks[country].masks.map((mask) => mask.map((item) => (item.substr(0, 1) !== '/') ? item : new RegExp(item.replace(/\//g, ''))))
+    const fieldMasks = postcodeMasks[country].masks.map((mask) => mask.map((item) => (item.substr(0, 1) !== '/') ? item : new RegExp(item.replace(/\//g, ''))))
 
     return (
-        <div>
-            <IntlTextField
-                {...rest}
-                masks={masks}
-                schema={postcodeSchema.definitions[country]}
-                placeholderIntls={postcodeMasks[country].placeholders}
-                helperTextIntl={postcodeMasks[country].helperText}
-                uppercase
-            />
-        </div>
+        <IntlTextField
+            {...rest}
+            masks={fieldMasks}
+            schema={postcodeSchema.definitions[country]}
+            placeholderIntls={postcodeMasks[country].placeholders}
+            helperTextIntl={postcodeMasks[country].helperText}
+            uppercase
+        />
     );
 };
 

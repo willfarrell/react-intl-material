@@ -7,7 +7,7 @@ import regionSchema from './schema.json';
 
 const Select = (props) => {
 
-    const {locale, name, country, onChange, ...rest} = props;
+    const {name, country, onChange, ...rest} = props;
 
     const handleChange = (event) => {
         event.target.name = name;

@@ -6,6 +6,7 @@ import { withStyles } from 'material-ui/styles';
 import {Formik} from 'formik';
 import Select from '../components/IntlSelect';
 import TextField from '../components/IntlTextField';
+import CountrySelect from '../components/Country/Select';
 import RegionSelect from '../components/Region/Select';
 import PostcodeTextField from '../components/Postcode/TextField';
 import PhoneNumberTextField from '../components/PhoneNumber/TextField';
@@ -33,9 +34,7 @@ const schema = {
     postcode: {
         "type":"string"
     },
-    country: {
-        "type":"string"
-    },
+    country: countrySchema.definitions.country,
     phone: {
         "type":"string"
     },
@@ -60,7 +59,6 @@ const Address = (props) => {
         return (
             <form onSubmit={handleSubmit} autoComplete="false" noValidate>
 
-
                 <TextField
                     name="name"
                     schema={schema.name}
@@ -77,10 +75,9 @@ const Address = (props) => {
                     fullWidth
                 />
 
-                <Select
+                <CountrySelect
                     name="country"
-                    schema={countrySchema.definitions.country}
-                    sort
+                    schema={schema.country}
 
                     value={values.country}
                     touched={touched.country}
