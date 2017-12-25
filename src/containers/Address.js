@@ -4,15 +4,15 @@ import { injectIntl, intlShape } from 'react-intl';
 import { withStyles } from 'material-ui/styles';
 
 import {Formik} from 'formik';
-import Select from '../modules/IntlSelect';
-import TextField from '../modules/IntlTextField';
-import RegionSelect from '../modules/Region/Select';
-import PostcodeTextField from '../modules/Postcode/TextField';
-import PhoneNumberTextField from '../modules/PhoneNumber/TextField';
-import EmailTextField from '../modules/Email/TextField';
-import UrlTextField from '../modules/Url/TextField';
+import Select from '../components/IntlSelect';
+import TextField from '../components/IntlTextField';
+import RegionSelect from '../components/Region/Select';
+import PostcodeTextField from '../components/Postcode/TextField';
+import PhoneNumberTextField from '../components/PhoneNumber/TextField';
+import EmailTextField from '../components/Email/TextField';
+import UrlTextField from '../components/Url/TextField';
 
-import countrySchema from '../modules/Country/schema.json';
+import countrySchema from '../components/Country/schema.json';
 
 const schema = {
     name: {

@@ -67,8 +67,8 @@ console.log('Countries with area codes', nanpCount);
 
 const arr = [];
 
-arr.push(writeFile(`src/modules/PhoneNumber/schema.json`, JSON.stringify(phoneSchema, null, 2), {encoding: 'utf8'}));
-arr.push(writeFile(`src/modules/PhoneNumber/masks.json`, JSON.stringify(phoneMask, null, 2), {encoding: 'utf8'}));
+arr.push(writeFile(`src/components/PhoneNumber/schema.json`, JSON.stringify(phoneSchema, null, 2), {encoding: 'utf8'}));
+arr.push(writeFile(`src/components/PhoneNumber/masks.json`, JSON.stringify(phoneMask, null, 2), {encoding: 'utf8'}));
 
 Promise.all(arr).then(() => {
     console.log('Done!');

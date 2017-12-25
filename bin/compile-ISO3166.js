@@ -74,7 +74,7 @@ console.log('Longest region code is:', regionLength);
 const arr = [];
 
 Object.keys(i18nJSON.country).forEach((lang) => {
-    arr.push(writeFile(`src/modules/Country/lang/${lang}.country.json`, JSON.stringify(i18nJSON.country[lang], null, 2), {encoding: 'utf8'}));
+    arr.push(writeFile(`src/components/Country/lang/${lang}.country.json`, JSON.stringify(i18nJSON.country[lang], null, 2), {encoding: 'utf8'}));
 });
 
 Object.keys(i18nJSON.region).forEach((lang) => {
@@ -82,11 +82,11 @@ Object.keys(i18nJSON.region).forEach((lang) => {
     Object.keys(i18nJSON.region[lang]).forEach((country) => {
         Object.assign(json, i18nJSON.region[lang][country]);
     });
-    arr.push(writeFile(`src/modules/Region/lang/${lang}.region.json`, JSON.stringify(json, null, 2), {encoding: 'utf8'}));
+    arr.push(writeFile(`src/components/Region/lang/${lang}.region.json`, JSON.stringify(json, null, 2), {encoding: 'utf8'}));
 });
 
-arr.push(writeFile(`src/modules/Country/schema.json`, JSON.stringify(countrySchemaJSON, null, 2), {encoding: 'utf8'}));
-arr.push(writeFile(`src/modules/Region/schema.json`, JSON.stringify(regionSchemaJSON, null, 2), {encoding: 'utf8'}));
+arr.push(writeFile(`src/components/Country/schema.json`, JSON.stringify(countrySchemaJSON, null, 2), {encoding: 'utf8'}));
+arr.push(writeFile(`src/components/Region/schema.json`, JSON.stringify(regionSchemaJSON, null, 2), {encoding: 'utf8'}));
 
 Promise.all(arr).then(() => {
     console.log('Done!');
