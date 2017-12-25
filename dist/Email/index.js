@@ -32,8 +32,8 @@ var TextField = function TextField(props) {
 
 
     return _react2.default.createElement(_TextField2.default, _extends({}, rest, {
-        value: (0, _email.decode)(value),
-        clean: _email.encode,
+        value: (0, _email.emailDecode)(value),
+        clean: _email.emailEncode,
         lowercase: true
     }));
 };

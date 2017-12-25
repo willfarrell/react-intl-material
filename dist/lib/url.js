@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.decode = exports.encode = undefined;
+exports.urlDecode = exports.urlEncode = undefined;
 
 var _idnaUts = require('idna-uts46');
 
@@ -18,7 +18,7 @@ var parse = function parse(str) {
     return urlParts;
 };
 
-var encode = exports.encode = function encode(value) {
+var urlEncode = exports.urlEncode = function urlEncode(value) {
     var urlParts = parse(value);
     if (urlParts[1] !== '') {
         urlParts[1] = _idnaUts2.default.toAscii(urlParts[1], { transitional: false });
@@ -26,7 +26,7 @@ var encode = exports.encode = function encode(value) {
     return encodeURI(urlParts.join(''));
 };
 
-var decode = exports.decode = function decode(value) {
+var urlDecode = exports.urlDecode = function urlDecode(value) {
     if (value) {
         var urlParts = parse(value);
         if (urlParts[1] !== '') {

@@ -32,8 +32,8 @@ var TextField = function TextField(props) {
 
 
     return _react2.default.createElement(_TextField2.default, _extends({}, rest, {
-        value: (0, _url.decode)(value),
-        clean: _url.encode,
+        value: (0, _url.urlDecode)(value),
+        clean: _url.urlEncode,
         lowercase: true
     }));
 };
