@@ -11,6 +11,7 @@ import PostcodeTextField from '../components/Postcode/index';
 import PhoneNumberTextField from '../components/PhoneNumber/index';
 import EmailTextField from '../components/Email/index';
 import UrlTextField from '../components/Url/index';
+import PasswordTextField from '../components/Password/index';
 
 import countrySchema from '../components/Country/schema.json';
 
@@ -41,6 +42,9 @@ const schema = {
         "type":"string"
     },
     url: {
+        "type":"string"
+    },
+    password: {
         "type":"string"
     }
 };
@@ -204,6 +208,20 @@ const Address = (props) => {
                     value={values.url}
                     touched={touched.url}
                     error={errors.url}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+
+                    required
+                    label
+                    fullWidth
+                />
+                <PasswordTextField
+                    name="password"
+                    schema={schema.password}
+
+                    value={values.password}
+                    touched={touched.password}
+                    error={errors.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
 

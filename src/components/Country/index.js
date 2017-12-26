@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlSelect from '../Select';
+import Select from '../Select';
 
-const Select = (props) => {
+const CountrySelect = (props) => {
     const {...rest} = props;
 
     return (
-        <IntlSelect
+        <Select
             {...rest}
             sort
         />
@@ -15,6 +15,6 @@ const Select = (props) => {
 };
 
 
-Select.propTypes = {};
+CountrySelect.propTypes = {};
 
-export default Select;
+export default CountrySelect;

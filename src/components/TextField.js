@@ -48,7 +48,8 @@ const IntlTextField = (props) => {
         label, placeholder, helperText,         // intl ids
         labelIntl, placeholderIntl, helperTextIntl, errorIntl, // require let
         masks, placeholders, placeholderIntls,
-        lowercase, uppercase, clean, onChange, ...rest  // styling & callbacks
+        lowercase, uppercase, clean, onChange,
+        startAdornment, endAdornment, ...rest  // styling & callbacks
     } = props;
 
     let inputValue = value;
@@ -130,10 +131,6 @@ const IntlTextField = (props) => {
     // masking
     inputValue = handleMask(value);
 
-    // punycode
-    if (['email','url'].indexOf(props.type) !== -1) {
-
-    }
 
     if (masks && placeholderIntls && placeholderIntls.length) {
         placeholderIntl = placeholderIntls[masksIndex]
@@ -157,6 +154,8 @@ const IntlTextField = (props) => {
                     value={inputValue || ''}
                     placeholder={placeholderIntl}
                     onChange={handleChange}
+                    startAdornment={startAdornment}
+                    endAdornment={endAdornment}
                 />
 
                 {helperTextIntl && <FormHelperText>{helperTextIntl}</FormHelperText>}
@@ -207,7 +206,10 @@ IntlTextField.propTypes = {
     ]),
     lowercase: PropTypes.bool,
     uppercase: PropTypes.bool,
-    clean: PropTypes.func
+    clean: PropTypes.func,
+    startAdornment: PropTypes.element,
+    endAdornment: PropTypes.element,
+
 };
 
 export default injectIntl(withStyles(styles)(IntlTextField));

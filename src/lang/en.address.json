@@ -8,5 +8,6 @@
     "field.postcode.label":"Postcode",
     "field.phone.label":"Phone",
     "field.email.label":"Email",
-    "field.url.label":"Website"
+    "field.url.label":"Website",
+    "field.password.label":"Password"
 }

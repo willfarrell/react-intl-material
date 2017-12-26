@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlTextField from '../TextField';
+import TextField from '../TextField';
 
 import masks from './masks.json';
 import schema from './schema.json';
@@ -18,14 +18,14 @@ const clean = (value) => value
     .replace(/[W-Z]/g, '9')
     .replace(/[^0-9+]/g, '');
 
-const TextField = (props) => {
+const PhoneNumberTextField = (props) => {
     // ignore schema in ...rest
     const {country, ...rest} = props;
 
     const fieldMasks = [masks[country].arr.map((item) => (item.substr(0, 1) !== '/') ? item : new RegExp(item.replace(/\//g, '')))];
 
     return (
-        <IntlTextField
+        <TextField
             {...rest}
             schema={schema}
             type="tel"
@@ -38,10 +38,10 @@ const TextField = (props) => {
     );
 };
 
-TextField.propTypes = {
+PhoneNumberTextField.propTypes = {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
     country: PropTypes.string.isRequired
 };
 
-export default TextField;
+export default PhoneNumberTextField;

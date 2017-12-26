@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlSelect from '../Select';
+import Select from '../Select';
 
 import regionSchema from './schema.json';
 
-const Select = (props) => {
+const RegionSelect = (props) => {
 
     const {name, country, onChange, ...rest} = props;
 
@@ -18,7 +18,7 @@ const Select = (props) => {
     // TODO catch use case for country `IO` - replace w/ string `N/A`
     return (
         <div>
-            <IntlSelect
+            <Select
                 {...rest}
                 name={`region${country}`}
                 label={`field.${name}.label`}
@@ -31,10 +31,10 @@ const Select = (props) => {
 };
 
 
-Select.propTypes = {
+RegionSelect.propTypes = {
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     country: PropTypes.string.isRequired
 };
 
-export default Select;
+export default RegionSelect;

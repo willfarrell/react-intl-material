@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlTextField from '../TextField';
+import TextField from '../TextField';
 
 import {urlEncode, urlDecode} from '../lib/url';
 
-const TextField = (props) => {
+const UrlTextField = (props) => {
     // ignore schema in ...rest
     const {...rest} = props;
     let {value} = props;
 
     return (
-        <IntlTextField
+        <TextField
             {...rest}
             value={urlDecode(value)}
             clean={urlEncode}
@@ -20,9 +20,9 @@ const TextField = (props) => {
     );
 };
 
-TextField.propTypes = {
+UrlTextField.propTypes = {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string
 };
 
-export default TextField;
+export default UrlTextField;
