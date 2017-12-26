@@ -46,7 +46,7 @@ const IntlTextField = (props) => {
         name,                                   // id
         schema, touched, value, error,          // formik values
         label, placeholder, helperText,         // intl ids
-        labelIntl, placeholderIntl, helperTextIntl, // require let
+        labelIntl, placeholderIntl, helperTextIntl, errorIntl, // require let
         masks, placeholders, placeholderIntls,
         lowercase, uppercase, clean, onChange, ...rest  // styling & callbacks
     } = props;
@@ -108,7 +108,7 @@ const IntlTextField = (props) => {
 
     // End masking
 
-    const hasError = touched && !!error;
+    const hasError = touched && !!(error || errorIntl);
 
     if (schema && schema.anyOf && schema.anyOf.length) {
         merge(schema, schema.anyOf[0]);
@@ -122,7 +122,8 @@ const IntlTextField = (props) => {
     placeholderIntl = placeholderIntl
         || makeLabel('placeholder', intl, name, placeholder);
 
-    helperTextIntl = (hasError && intl.formatMessage({id: error}, helperTextValues)) // override with error
+    helperTextIntl = (hasError && error && intl.formatMessage({id: error}, helperTextValues)) // override with error
+        || hasError && errorIntl
         || helperTextIntl
         || makeLabel('helperText', intl, name, helperText, helperTextValues);
 
@@ -171,8 +172,12 @@ IntlTextField.propTypes = {
     schema: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
-    error: PropTypes.string,
     touched: PropTypes.bool,
+    error: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool
+    ]),
+    errorIntl: PropTypes.string,
     label: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.bool
