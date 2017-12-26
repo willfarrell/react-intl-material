@@ -1,6 +1,6 @@
 {
   "name": "react-intl-material",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "engines": {
     "node": ">8.8",
     "npm": ">5.5"
@@ -44,7 +44,7 @@
     "react-test-renderer": "^16.2.0"
   },
   "scripts": {
-    "deploy": "npm run compile && npm run compile:babel && cd dist && npm publish",
+    "prepublish": "npm run compile && npm run compile:babel && cd dist",
     "start": "PORT=8080 react-scripts start",
     "compile": "npm run compile:phone && npm run compile:region",
     "compile:phone": "node bin/compile-E.164.js",
