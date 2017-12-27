@@ -8,8 +8,7 @@ import {qtyEncode, qtyDecode} from '../lib/qty';
 
 const QuantityTextField = (props) => {
     // ignore schema in ...rest
-    const {...rest} = props;
-    let {value, unit, base} = props;
+    const {value, unit, base, ...rest} = props;
 
     return (
         <TextField
