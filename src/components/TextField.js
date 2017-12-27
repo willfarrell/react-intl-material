@@ -100,7 +100,7 @@ const IntlTextField = (props) => {
 
         event.target.value = handleMask(event.target.value);
 
-        if (clean) {
+        if (!!clean) {
             event.target.value = clean(event.target.value);
         }
 
@@ -164,7 +164,10 @@ IntlTextField.propTypes = {
     name: PropTypes.string.isRequired,
     schema: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
     touched: PropTypes.bool,
     error: PropTypes.oneOfType([
         PropTypes.string,

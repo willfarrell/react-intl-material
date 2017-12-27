@@ -5,13 +5,14 @@ import { withStyles } from 'material-ui/styles';
 
 import {Formik} from 'formik';
 import TextField from '../components/TextField';
-import CountrySelect from '../components/Country/index';
-import RegionSelect from '../components/Region/index';
-import PostcodeTextField from '../components/Postcode/index';
-import PhoneNumberTextField from '../components/PhoneNumber/index';
-import EmailTextField from '../components/Email/index';
-import UrlTextField from '../components/Url/index';
-import PasswordTextField from '../components/Password/index';
+import CountrySelect from '../components/Country';
+import RegionSelect from '../components/Region';
+import PostcodeTextField from '../components/Postcode';
+import PhoneNumberTextField from '../components/PhoneNumber';
+import EmailTextField from '../components/Email';
+import UrlTextField from '../components/Url';
+import PasswordTextField from '../components/Password';
+import QuantityTextField from '../components/Quantity';
 
 import countrySchema from '../components/Country/schema.json';
 
@@ -46,6 +47,9 @@ const schema = {
     },
     password: {
         "type":"string"
+    },
+    height: {
+        "type":"nubmer"
     }
 };
 
@@ -222,6 +226,23 @@ const Examples = (props) => {
                     value={values.password}
                     touched={touched.password}
                     error={errors.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+
+                    required
+                    label
+                    fullWidth
+                />
+
+                <QuantityTextField
+                    name="height"
+                    unit="cm"
+                    base="m"
+                    schema={schema.height}
+
+                    value={values.height}
+                    touched={touched.height}
+                    error={errors.height}
                     onChange={handleChange}
                     onBlur={handleBlur}
 

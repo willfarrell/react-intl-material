@@ -22,7 +22,7 @@ class App extends Component {
 
     componentWillMount() {
         getLocaleMessages(this.state.locale, [
-            'static/lang/{language}.address.json',
+            'static/lang/{language}.example.json',
             'static/lang/{language}.country.json',
             'static/lang/{language}.region.json'
         ]).then((messages) => {

@@ -9,5 +9,6 @@
     "field.phone.label":"Phone",
     "field.email.label":"Email",
     "field.url.label":"Website",
-    "field.password.label":"Password"
+    "field.password.label":"Password",
+    "field.height.label":"Height"
 }
