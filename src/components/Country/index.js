@@ -15,6 +15,7 @@ const CountrySelect = (props) => {
         <Select
             {...rest}
             name={`country`}
+            label={`field.${name}.label`}
             onChange={handleChange}
             sort
         />
