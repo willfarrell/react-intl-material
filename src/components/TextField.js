@@ -6,7 +6,7 @@ import {injectIntl, intlShape} from 'react-intl';
 import {merge} from 'lodash';
 
 import {conformToMask} from 'text-mask-core';
-import {makeLabel} from './lib/label';
+import {makeHasError, makeLabel, makePlaceholder, makeHelperText} from './lib/label';
 
 // input elements
 import Input, {InputLabel} from 'material-ui/Input';
@@ -109,7 +109,7 @@ const IntlTextField = (props) => {
 
     // End masking
 
-    const hasError = touched && !!(error || errorIntl);
+
 
     if (schema && schema.anyOf && schema.anyOf.length) {
         merge(schema, schema.anyOf[0]);
@@ -117,16 +117,10 @@ const IntlTextField = (props) => {
 
     const helperTextValues = { value, ...schema };
 
-    labelIntl = labelIntl
-        || makeLabel('label', intl, name, label);
-
-    placeholderIntl = placeholderIntl
-        || makeLabel('placeholder', intl, name, placeholder);
-
-    helperTextIntl = (hasError && error && intl.formatMessage({id: error}, helperTextValues)) // override with error
-        || hasError && errorIntl
-        || helperTextIntl
-        || makeLabel('helperText', intl, name, helperText, helperTextValues);
+    const hasError = makeHasError(props);
+    labelIntl = makeLabel(props);
+    placeholderIntl = makePlaceholder(props);
+    helperTextIntl = makeHelperText(props, helperTextValues);
 
     // masking
     inputValue = handleMask(value);

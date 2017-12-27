@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 
 import {merge} from 'lodash';
-import {makeLabel} from './lib/label';
+import {makeHasError, makeHelperText, makeLabel, makePlaceholder} from './lib/label';
 
 // input elements
 import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
@@ -26,7 +26,6 @@ const IntlRadioSelect = (props) => {
         onChange(event);
     };
 
-    const hasError = touched && !!error;
 
     if (schema && schema.anyOf && schema.anyOf.length) {
         merge(schema, schema.anyOf[0]);
@@ -34,13 +33,9 @@ const IntlRadioSelect = (props) => {
 
     const helperTextValues = { value, ...schema };
 
-    labelIntl = labelIntl
-        || makeLabel('label', intl, name, label);
-
-    helperTextIntl = (hasError && error && intl.formatMessage({id: error}, helperTextValues)) // override with error
-        || hasError && errorIntl
-        || helperTextIntl
-        || makeLabel('helperText', intl, name, helperText, helperTextValues);
+    const hasError = makeHasError(props);
+    labelIntl = makeLabel(props);
+    helperTextIntl = makeHelperText(props, helperTextValues);
 
     //console.log('IntlRadioSelect.render()', name, value);
 
