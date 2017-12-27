@@ -5,7 +5,7 @@ import {IntlProvider} from 'react-intl';
 import initLocale, {getLocaleMessages} from 'react-intl-locale';
 
 // Containers
-import Address from './containers/Address';
+import Examples from './containers/Examples';
 
 // Set locale
 const defaultLocale = 'en-CA';
@@ -40,7 +40,7 @@ class App extends Component {
                 locale={locale}
                 messages={messages}
             >
-                <Address />
+                <Examples />
             </IntlProvider>
         );
     }

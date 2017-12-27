@@ -53,7 +53,7 @@ const styles = () => ({
     root: {}
 });
 
-const Address = (props) => {
+const Examples = (props) => {
     const { classes, intl } = props;
 
     const form = (formik) => {
@@ -248,9 +248,9 @@ const Address = (props) => {
     );
 };
 
-Address.propTypes = {
+Examples.propTypes = {
     classes: PropTypes.object.isRequired,
     intl: intlShape.isRequired
 };
 
-export default injectIntl(withStyles(styles)(Address));
+export default injectIntl(withStyles(styles)(Examples));
