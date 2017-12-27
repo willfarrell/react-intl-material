@@ -46,7 +46,7 @@ const IntlTextField = (props) => {
         name,                                   // id
         schema, touched, value, error,          // formik values
         label, placeholder, helperText,         // intl ids
-        labelIntl, placeholderIntl, helperTextIntl, errorIntl, // require let
+        labelIntl, errorIntl, placeholderIntl, helperTextIntl,  // require let
         masks, placeholders, placeholderIntls,
         lowercase, uppercase, clean, onChange,
         startAdornment, endAdornment, ...rest  // styling & callbacks

@@ -28,7 +28,7 @@ const IntlSelect = (props) => {
         name,                           // id
         schema, touched, value, error,  // formik values
         label, helperText,              // intl ids
-        labelIntl, helperTextIntl,
+        labelIntl, errorIntl, helperTextIntl,
         onChange, sort, ...rest                         // styling & callbacks
     } = props;
 
@@ -49,7 +49,8 @@ const IntlSelect = (props) => {
     labelIntl = labelIntl
         || makeLabel('label', intl, name, label);
 
-    helperTextIntl = (hasError && intl.formatMessage({id: error}, helperTextValues)) // override with error
+    helperTextIntl = (hasError && error && intl.formatMessage({id: error}, helperTextValues)) // override with error
+        || hasError && errorIntl
         || helperTextIntl
         || makeLabel('helperText', intl, name, helperText, helperTextValues);
 
@@ -98,8 +99,12 @@ IntlSelect.propTypes = {
     name: PropTypes.string.isRequired,
     sort: PropTypes.bool,
     value: PropTypes.string,
-    error: PropTypes.string,
     touched: PropTypes.bool,
+    error: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool
+    ]),
+    errorIntl: PropTypes.string,
     label: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.bool
