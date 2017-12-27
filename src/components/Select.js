@@ -29,13 +29,18 @@ const IntlSelect = (props) => {
         schema, touched, value, error,  // formik values
         label, helperText,              // intl ids
         labelIntl, errorIntl, helperTextIntl,
-        onChange, sort, ...rest                         // styling & callbacks
+        onChange, onBlur, sort, ...rest                         // styling & callbacks
     } = props;
 
     const handleChange = (event) => {
         event.target.name = name;   // not passed back from material-ui component
-        event.persist = () => {}; // workaround for bug in formnik TODO submit PR #179
+        event.persist = () => {};   // workaround for bug in formnik TODO submit PR #179
         onChange(event);
+    };
+
+    const handleBlur = (event) => {
+        event.target.name = name;   // not passed back from material-ui component
+        onBlur(event);
     };
 
     const hasError = touched && !!error;
@@ -77,6 +82,7 @@ const IntlSelect = (props) => {
                 value={value || ''}
                 input={<Input name={name}/>}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 classes={{
                     icon: rest.disabled ? classes.iconDisabled : classes.iconEnabled
                 }}
