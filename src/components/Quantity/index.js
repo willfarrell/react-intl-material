@@ -13,6 +13,7 @@ const QuantityTextField = (props) => {
 
     return (
         <TextField
+            step="any"  // allow override
             {...rest}
             type="number"
             value={qtyDecode(unit, base)(value)}
