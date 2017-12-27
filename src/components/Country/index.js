@@ -4,11 +4,18 @@ import PropTypes from 'prop-types';
 import Select from '../Select';
 
 const CountrySelect = (props) => {
-    const {...rest} = props;
+    const {name, onChange, ...rest} = props;
+
+    const handleChange = (event) => {
+        event.target.name = name;
+        onChange(event);
+    };
 
     return (
         <Select
             {...rest}
+            name={`country`}
+            onChange={handleChange}
             sort
         />
     );

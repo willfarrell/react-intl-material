@@ -209,7 +209,10 @@ IntlTextField.propTypes = {
     clean: PropTypes.func,
     startAdornment: PropTypes.element,
     endAdornment: PropTypes.element,
+};
 
+IntlTextField.defaultProps = {
+    schema: {},
 };
 
 export default injectIntl(withStyles(styles)(IntlTextField));
