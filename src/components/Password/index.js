@@ -24,7 +24,7 @@ class PasswordTextField extends React.Component {
             this.setState({ showPassword: !this.state.showPassword });
         };
     }
-    
+
     render() {
         const {...rest} = this.props;
 
@@ -49,7 +49,7 @@ class PasswordTextField extends React.Component {
 }
 
 PasswordTextField.propTypes = {
-
+    name: PropTypes.string.isRequired,
 };
 
 export default PasswordTextField;

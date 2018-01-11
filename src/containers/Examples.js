@@ -5,6 +5,7 @@ import { withStyles } from 'material-ui/styles';
 
 import {Formik} from 'formik';
 import TextField from '../components/TextField';
+import Select from '../components/Select';
 import CountrySelect from '../components/Country';
 import RegionSelect from '../components/Region';
 import PostcodeTextField from '../components/Postcode';
@@ -251,6 +252,7 @@ const Examples = (props) => {
                     fullWidth
                 />
 
+                {isValid}
             </form>
         )
     };

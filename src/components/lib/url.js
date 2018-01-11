@@ -2,7 +2,7 @@ import uts46 from "idna-uts46";
 
 // 0: protocol, 1: hostanme, 2: querystring
 const parse = (str) => {
-    const urlParts = /^(\w+:\/\/)?([^\/]+)(.*)$/.exec(str);
+    const urlParts = /^(\w+:\/\/)?([^/]+)(.*)$/.exec(str);
     urlParts.shift();
     return urlParts;
 };

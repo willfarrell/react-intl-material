@@ -17,5 +17,5 @@ export const qtyDecode = (unit, base) => (value) => {
     if (value !== 0 && !value) return null;
     //console.log('qtyDecode(base=>unit)', value, base, '=>', Number.parseFloat(math.unit(value, base).toNumber(unit).toFixed(10)), unit);
     // JS BUG: parseFloat(value.toFixed(n)) to fix floating point error
-    return Number.parseFloat(math.unit(value, base).toNumber(unit).toFixed(10));    // TODO submit PR to mathjs
+    return Number.parseFloat(math.unit(value, base).toNumber(unit).toFixed(14));
 };

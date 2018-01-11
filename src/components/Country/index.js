@@ -23,6 +23,9 @@ const CountrySelect = (props) => {
 };
 
 
-CountrySelect.propTypes = {};
+CountrySelect.propTypes = {
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+};
 
 export default CountrySelect;

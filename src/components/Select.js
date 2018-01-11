@@ -4,7 +4,7 @@ import { injectIntl, intlShape } from 'react-intl';
 import { withStyles } from 'material-ui/styles';
 
 import {merge} from 'lodash';
-import {makeHasError, makeHelperText, makeLabel, makePlaceholder} from './lib/label';
+import {makeHasError, makeHelperText, makeLabel} from './lib/label';
 
 // input elements
 import { FormControl, FormHelperText } from 'material-ui/Form';
