@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import {merge} from 'lodash';
 import {makeHasError, makeHelperText, makeLabel} from './lib/label';
 
 // input elements
-import { FormControl, FormHelperText } from 'material-ui/Form';
-import Input, { InputLabel } from 'material-ui/Input';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
 
-import Select from 'material-ui/Select';
-import { MenuItem } from 'material-ui/Menu';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const styles = () => ({
     iconEnabled: {

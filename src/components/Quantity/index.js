@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import TextField from '../TextField';
-import { InputAdornment } from 'material-ui/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 import {qtyEncode, qtyDecode} from '../lib/qty';
 

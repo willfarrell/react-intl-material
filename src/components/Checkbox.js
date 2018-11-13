@@ -6,8 +6,10 @@ import {merge} from 'lodash';
 import {makeHasError, makeHelperText, makeLabel, makePlaceholder} from './lib/label';
 
 // input elements
-import { FormControl, FormControlLabel, FormHelperText } from 'material-ui/Form';
-import Checkbox from 'material-ui/Checkbox';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const IntlCheckbox = (props) => {
     let {

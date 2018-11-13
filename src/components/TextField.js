@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
+import {withStyles} from '@material-ui/core/styles';
 import {injectIntl, intlShape} from 'react-intl';
 
 import {merge} from 'lodash';
@@ -9,8 +9,10 @@ import {conformToMask} from 'text-mask-core';
 import {makeHasError, makeLabel, makePlaceholder, makeHelperText} from './lib/label';
 
 // input elements
-import Input, {InputLabel} from 'material-ui/Input';
-import {FormControl, FormHelperText} from 'material-ui/Form';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 // use when pulling form jsonschema
 //export const regexMask = (mask) => mask.map((str, idx) => (str.substr(0,1) === '/' && str.substr(-1,1) === '/') ? RegExp(str.substr(1,str.length-2) : str);

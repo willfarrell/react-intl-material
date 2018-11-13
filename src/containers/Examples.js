@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import {Formik} from 'formik';
 import TextField from '../components/TextField';
@@ -66,7 +66,6 @@ const Examples = (props) => {
         //console.log('formik', values);
         return (
             <form onSubmit={handleSubmit} autoComplete="false" noValidate>
-
                 <TextField
                     name="name"
                     schema={schema.name}
@@ -220,6 +219,7 @@ const Examples = (props) => {
                     label
                     fullWidth
                 />
+
                 <PasswordTextField
                     name="password"
                     schema={schema.password}

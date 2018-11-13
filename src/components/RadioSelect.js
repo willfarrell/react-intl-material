@@ -6,8 +6,12 @@ import {merge} from 'lodash';
 import {makeHasError, makeHelperText, makeLabel, makePlaceholder} from './lib/label';
 
 // input elements
-import { FormControl, FormGroup, FormControlLabel, FormLabel, FormHelperText } from 'material-ui/Form';
-import Radio from 'material-ui/Radio';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormLabel from '@material-ui/core/FormLabel';
+import Radio from '@material-ui/core/Radio';
 
 const IntlRadioSelect = (props) => {
     let {
